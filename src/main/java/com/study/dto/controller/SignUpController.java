@@ -35,7 +35,7 @@ public class SignUpController {
             // 다시 로그인 페이지로 이동
             return "redirect:/loginform";
         }
-        // 9-1. 비교한 비밀번호가 같은 경우
+        // 9-2. 비교한 비밀번호가 같은 경우
         // 메인 페이지로 이동
         return "Main";
     }

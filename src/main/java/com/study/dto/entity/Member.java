@@ -14,9 +14,8 @@ import javax.persistence.Id;
 @ToString // 객체를 불러올때 주솟값이 아닌 String 타입으로 변경해주는 어노테이션
 @Entity(name="Member") // Entity 어노테이션 - 괄호안에는 테이블명과 똑같이 작성한다.
 public class Member {
-    // 기본키
     @Id // 기본키 어노테이션 - 기본키 설정 (PRIMARY KEY)
-    // // @GeneratedValue(strategy = GenerationType.IDENTITY) - AUTO_INCREMENT - MySQL에서 시퀀스 역할을 담당한다.
+    // @GeneratedValue(strategy = GenerationType.IDENTITY) - AUTO_INCREMENT - MySQL에서 시퀀스 역할을 담당한다.
     @Column(length = 50) // 컬럼 어노테이션 - 기본키 제외 나머지 컬럼 설정 - 기본키랑 같이 쓰이면 기본키의 설정값들을 잡아줄 수 있다.
     private String emailId;
 
@@ -30,7 +29,7 @@ public class Member {
     @Column(length = 20, unique = true, nullable = false)
     private String nickname;
 
-    @Column(nullable = false) // DATE 사용
+    @Column(nullable = false)
     private String birthday;
 
     @Column(length = 1, nullable = false)
@@ -67,7 +66,6 @@ public class Member {
         private String phoneNumber;
         private String address;
         private String studyType;
-        private String platform;
 
         // DTO를 Entity로 변환 (빌더 방식)
         public Member toEntity() {
@@ -81,7 +79,7 @@ public class Member {
                     .phoneNumber(phoneNumber)
                     .address(address)
                     .studyType(studyType)
-                    .platform(platform)
+                    .platform("soju") // 가입 플랫폼 설정
                     .build();
         }
     }
