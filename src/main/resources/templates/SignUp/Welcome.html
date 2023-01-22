@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!-- th:text="${모델로 바인딩한 값의 변수명}" - 모델로 바인딩한 값을 가져온다. -->
+    <div th:text="${nickname} + '님 환영합니다'"></div>
+    <input type="button" value="메인으로" onclick="location.href = '/'">
+</body>
+</html>

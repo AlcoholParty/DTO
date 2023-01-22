@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/ul.css">
+</head>
+<body>
+    <!-- th:object="${바인딩한 객체의 변수명}" - 모델로 바인딩한 객체를 가져온다. -->
+    <form action="/loginform/login" th:object="${memberDTO}" method="post">
+        <ul>
+            <!-- th:field="*{th:object로 가져온 객체의 내부 변수명}" - 모델로 바인딩한 객체의 내부 변수들을 가져와 id, name, value 속성을 자동으로 처리 해준다. -->
+            <li><label>아이디 : </label><input th:field="*{emailId}" type="text"></li>
+            <li><label>비밀번호 : </label><input th:field="*{pwd}" type="password"></li>
+        </ul>
+        <input type="submit" value="로그인">
+        <input type="button" value="회원가입" onclick="location.href='/joinform'">
+    </form>
+</body>
+</html>
